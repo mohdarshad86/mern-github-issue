@@ -1,7 +1,7 @@
 import { Octokit } from 'octokit';
 
 const octokit = new Octokit({
-    auth: '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'
+    auth: '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'
 })
 
 export const getIssues = async (page = 1, perPage = 10) => {
