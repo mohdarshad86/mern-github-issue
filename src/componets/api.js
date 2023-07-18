@@ -5,8 +5,7 @@ const octokit = new Octokit({
 })
 
 export const getIssues = async (page = 1, perPage = 10) => {
-
-
+    
     const response = await octokit.request("GET /repos/{owner}/{repo}/issues", {
         owner: "facebook",
         repo: "react",
@@ -18,3 +17,14 @@ export const getIssues = async (page = 1, perPage = 10) => {
     return response.data;
 };
 
+export const getSingleIssues = async ({ issueNumber }) => {
+
+    const response = await octokit.request('GET /repos/{owner}/{repo}/issues/{issue_number}', {
+        owner: "facebook",
+        repo: "react",
+        issue_number: issueNumber,
+
+    })
+    console.log(response.data);
+    return response.data;
+}
