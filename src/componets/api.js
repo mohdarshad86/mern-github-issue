@@ -1,11 +1,11 @@
 import { Octokit } from 'octokit';
 
 const octokit = new Octokit({
-    auth: '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'
+    auth: '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'
 })
 
 export const getIssues = async (page = 1, perPage = 10) => {
-    
+
     const response = await octokit.request("GET /repos/{owner}/{repo}/issues", {
         owner: "facebook",
         repo: "react",
